@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container"></div>
+  </body>
+  <script>
+    const requestUrl = "https://api.github.com/users/hiteshchoudhary";
+    const xrh = new XMLHttpRequest();
+    xrh.open("GET", requestUrl);
+
+    let followers;
+    let ImgUrl;
+
+    xrh.onreadystatechange = function () {
+      console.log(xrh.readyState);
+
+      if (xrh.readyState === 4 ) {
+        //console.log(this.responseText) // this refers to the currect context
+
+        const data = JSON.parse(this.responseText);
+        console.log(typeof data);
+        console.log(data);
+        followers = data.followers;
+        ImgUrl = data.avatar_url;
+
+        // console.log(followers,ImgUrl)
+
+        const box = document.createElement("div");
+        box.innerHTML = `<img class="photo" width="200px" src=${ImgUrl}/> <p> Number Of followers are :- ${followers}</p>`;
+        box.style.width = "400px";
+        box.style.height = "400px";
+        box.style.backgroundColor = "red";
+        box.style.margin = "10px";
+        const container = document.querySelector(".container");
+        container.appendChild(box);
+      }
+    };
+    xrh.send();
+  </script>
+</html>

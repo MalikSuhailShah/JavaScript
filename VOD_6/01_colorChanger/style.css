@@ -1,0 +1,63 @@
+html {
+  margin: 0;
+}
+body {
+  margin: 0px;
+  padding: 0px;
+}
+span {
+  display: block;
+}
+.canvas {
+  margin: 100px auto 100px;
+  width: 80%;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.button {
+  height: 100px;
+  width: 100px;
+  border: 2px solid black;
+  display: inline-block;
+}
+
+#grey {
+  background: grey;
+}
+
+#white {
+  background: white;
+}
+#blue {
+  background: blue;
+}
+#yellow {
+  background: yellow;
+}
+#purple{
+    background-color: purple;
+}
+
+nav {
+  border: 2px solid black;
+  height: 5vh;
+  background-color: rgb(235, 229, 229);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav a {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 8px;
+  background-color: gainsboro;
+}

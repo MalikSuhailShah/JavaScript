@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>CHai AUr COde</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+  </body>
+  <script>
+    const changeText = function (str){
+        console.log(str, Date.now())
+    }
+    let clInterval=null;
+    document.querySelector('#start').addEventListener('click',function (event){
+       if(!clInterval)  clInterval =  setInterval(changeText,1000,'HII')
+    })
+
+    document.querySelector('#stop').addEventListener('click', function (event){
+        clearInterval(clInterval);
+        clInterval=null;
+    })
+  </script>
+</html>
